@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* NAVBAR */
 .navbar-fixed {
   @apply fixed z-[9999];
 }
@@ -22,18 +23,25 @@
   @apply -translate-y-[12px] -rotate-[225deg];
 }
 
+/* HOME */
+.socmed-button {
+  @apply absolute w-[18%]  md:w-16 aspect-square bg-primary rounded-xl shadow-md z-10 hover:drop-shadow-2xl hover:scale-110 transition duration-200 ease-in-out active:bg-light active:transition-none;
+}
+
+/* EDUCATION */
 .education-cell-first {
-  @apply mx-3 w-full pb-[0%] bg-primary mt-8 mb-1.5 rounded-[16px] hover:bg-light transition-all duration-300 md:w-[45%] md:mt-9 lg:mt-10;
+  @apply mx-3 w-full pb-0 bg-primary mt-8 mb-1.5 rounded-[16px] hover:bg-light transition-all duration-300 md:w-[45%] md:mt-9 lg:mt-10;
 }
 
 .education-cell {
-  @apply mx-3 w-full pb-[0%] bg-primary my-1.5 rounded-[16px] hover:bg-light transition-all duration-300 md:w-[45%] md:mt-9 lg:mt-10;
+  @apply mx-3 w-full pb-0 bg-primary my-1.5 rounded-[16px] hover:bg-light transition-all duration-300 md:w-[45%] md:mt-9 lg:mt-10;
 }
 
 .education-cell-last {
   @apply mx-3 w-full pb-0 bg-primary mt-1.5 mb-3 rounded-[16px] hover:bg-light transition-all duration-300 md:w-[45%];
 }
 
+/* EXPERIENCE */
 .experience-cell {
-  @apply flex flex-col items-end w-auto h-full hover:scale-105 md:hover:scale-[102%] origin-center active:scale-95 md:active:scale-[98%] transition;
+  @apply flex flex-col items-end w-auto h-full hover:scale-[104%] md:hover:scale-[101%] origin-center active:scale-95 md:active:scale-[98%] transition;
 }

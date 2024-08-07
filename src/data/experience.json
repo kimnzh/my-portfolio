@@ -1,0 +1,40 @@
+{
+  "experiences": [
+    {
+      "id": 1,
+      "type": "Committee",
+      "period": "Aug 2023 - Dec 2023",
+      "image": "SemarakApresiasi",
+      "role": "Staff of Finance",
+      "name": "Semarak Apresiasi UI",
+      "desc": "Staff in fundraising division of Semarak Apresiasi, an event committee that focused on giving appreciation towards University of Indonesia students community by the end of the year."
+    },
+    {
+      "id": 2,
+      "type": "Committee",
+      "period": "Oct 2023",
+      "image": "MADOEE",
+      "role": "Staff of Finance",
+      "name": "MADOEE",
+      "desc": "Staff in fundraising division of MADOEE (Meeting Affair Department Of Electrical Engineering), as part of DTE's Batch 2023 Project for the PSAF requirements."
+    },
+    {
+      "id": 3,
+      "type": "Committee",
+      "period": "Feb 2024 - Apr 2024",
+      "image": "BETIS",
+      "role": "Peer Tutor",
+      "name": "BETIS Fasilkom UI",
+      "desc": "Teaches Penalaran Matematika (Comprehension in Mathematics), a subtest of UTBK (College Admission Test) that focuses on examinee’s understanding in the field of mathematics."
+    },
+    {
+      "id": 4,
+      "type": "Committee",
+      "period": "Aug 2023 - Dec 2023",
+      "image": "TRUI",
+      "role": "Programming Division at MAAT",
+      "name": "Tim Robotika UI",
+      "desc": "Part of the programming team at Makara Aeronautics and Avionics Team, a robotics team that mainly focused rockets and aerial vehicles."
+    }
+  ]
+}

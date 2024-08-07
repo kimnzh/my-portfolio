@@ -1,0 +1,86 @@
+{
+  "schools": [
+    {
+      "id": 1,
+      "link": "https://smpn147jkt.sch.id/",
+      "image": "SMPN147",
+      "name": "SMPN 147 Jakarta",
+      "grade": "A",
+      "cells": [
+        {
+          "id": 1,
+          "major": "",
+          "score": "Score: [FILL] / 100.0",
+          "date": "2017 - 2020",
+          "expected": "",
+          "notes": [
+            {
+              "id": 1,
+              "note": "Active in school's Islamic Spiritual Club"
+            },
+            {
+              "id": 2,
+              "note": "Ranked 12 / 324 on final school exam"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "link": "https://www.sman64jkt.sch.id/",
+      "image": "SMAN64",
+      "name": "SMAN 64 Jakarta",
+      "grade": "A",
+      "cells": [
+        {
+          "id": 1,
+          "major": "Diploma of Mathematics and Natural Sciences",
+          "score": "Score: [FILL] / 100.0",
+          "date": "2020 - 2023",
+          "expected": "",
+          "notes": [
+            {
+              "id": 1,
+              "note": "Active in school's Science Club"
+            },
+            {
+              "id": 2,
+              "note": "Ranked 3 / 276 on final school exam"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "link": "https://www.ui.ac.id/",
+      "image": "UI",
+      "name": "University of Indonesia",
+      "grade": "A",
+      "cells": [
+        {
+          "id": 1,
+          "major": "Bachelor of Engineering - Computer Engineering",
+          "score": "GPA: 3.77 / 4.00 (Not Finished)",
+          "date": "2023 - 2024",
+          "expected": "",
+          "notes": [
+            {
+              "id": 1,
+              "note": "Academically outstanding student with the GPA: 4.00 / 4.00 on the first semester"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "major": "Bachelor of Computer Science - Computer Science",
+          "score": "GPA: - / 4.00 (Freshman)",
+          "date": "2024 - present",
+          "expected": "2028",
+          "notes": []
+        }
+      ]
+    }
+  ]
+}
