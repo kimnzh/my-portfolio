@@ -1,4 +1,5 @@
 import Navbar from "./elements/Navbar";
+import Footer from "./elements/Footer";
 
 import data from "../data/education.json";
 
@@ -20,7 +21,7 @@ export default function Education() {
         id="education"
         className="min-h-screen flex justify-center lg:px-16"
       >
-        <div className="container font-poppins pt-16 sm:pt-20">
+        <div className="font-poppins pt-16 sm:pt-20 pb-8">
           <div className="flex flex-wrap justify-center px-4">
             <div className="absolute flex items-center bg-primary h-12 my-3 rounded-full sm:scale-110 sm:my-4 xl:scale-125">
               <h4 className="text-2xl font-bold text-background px-8">
@@ -112,6 +113,7 @@ export default function Education() {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }

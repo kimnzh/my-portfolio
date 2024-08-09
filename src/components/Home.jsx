@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 import Navbar from "./elements/Navbar";
+import Footer from "./elements/Footer";
 
 import profile from "../assets/img/hakim.jpg";
 import instagramIcon from "../assets/socmed/instagram.svg";
@@ -114,6 +115,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }

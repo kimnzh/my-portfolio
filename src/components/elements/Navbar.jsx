@@ -6,13 +6,6 @@ const navItems = [
   { id: "about-me", text: "About Me", path: "/about-me", current: false },
   { id: "education", text: "Education", path: "/education", current: false },
   { id: "experience", text: "Experience", path: "/experience", current: false },
-  {
-    id: "certification",
-    text: "Certification",
-    path: "/certification",
-    current: false,
-  },
-  { id: "project", text: "Project", path: "/project", current: false },
 ];
 
 export default function Navbar({ currentId }) {

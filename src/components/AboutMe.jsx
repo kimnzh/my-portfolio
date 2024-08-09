@@ -1,4 +1,5 @@
 import Navbar from "./elements/Navbar";
+import Footer from "./elements/Footer";
 
 export default function AboutMe() {
   return (
@@ -60,6 +61,7 @@ export default function AboutMe() {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }
