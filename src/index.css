@@ -25,7 +25,11 @@
 
 /* HOME */
 .socmed-button {
-  @apply absolute w-[18%]  md:w-16 aspect-square bg-primary rounded-xl shadow-md z-10 hover:drop-shadow-2xl hover:scale-110 transition duration-200 ease-in-out active:bg-light active:transition-none;
+  @apply absolute w-[20%] aspect-square bg-primary rounded-[20%] shadow-md z-10 hover:drop-shadow-2xl hover:scale-110 transition duration-200 ease-in-out active:bg-light active:transition-none;
+}
+
+.anchor {
+  @apply w-full font-semibold text-background bg-primary py-3 rounded-full hover:shadow-lg hover:bg-light transition duration-300 ease-in-out sm:px-8;
 }
 
 /* EDUCATION */

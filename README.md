@@ -1,8 +1,11 @@
-# React + Vite
+**First Draft**:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- All sections completed (Home, About Me, Education, and Experience)
+- Used routing to navigate the sections
+- Still needed some adjustments for the data in education
+- Still need to work on the responsives for greater media queries
 
-Currently, two official plugins are available:
+**Second Draft**:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Routing is removed, only with scroll for the navigation
+- Adjusted the responsives for the home section and the navbar
