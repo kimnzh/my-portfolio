@@ -14,7 +14,7 @@ export default function Home() {
       id="home"
       className="min-h-screen px-4 lg:px-16 grid grid-rows-[1fr]"
     >
-      <div className="flex items-center mt-12 sm:mt-16 2xl:mt-20">
+      <div className="flex items-start lg:items-center mt-12 sm:mt-16 2xl:mt-20">
         <div className="w-full grid lg:grid-rows-1 lg:grid-cols-[1fr_40%] lg:gap-16 2xl:gap-16">
           <div className="flex justify-center w-full px-10 lg:px-8 py-10 lg:order-last">
             <div className="max-w-72 lg:max-w-[20.75rem] 2xl:max-w-[36rem] aspect-square relative">
