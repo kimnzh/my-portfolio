@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-scroll";
 
 import profile from "../assets/img/hakim.jpg";
@@ -8,7 +7,6 @@ import youtubeIcon from "../assets/socmed/youtube.svg";
 import linkedinIcon from "../assets/socmed/linkedin.svg";
 
 export default function Home() {
-  const navigate = useNavigate();
   return (
     <section
       id="home"
@@ -94,12 +92,7 @@ export default function Home() {
               Enthusiast
             </h2>
             <div className="w-full  mt-5 grid grid-cols-2 gap-2 lg:gap-5 h-fit text-xs  sm:text-base 2xl:text-3xl">
-              <Link
-                to="about-me"
-                smooth={true}
-                duration={500}
-                onClick={() => navigate("/about-me")}
-              >
+              <Link to="about-me" smooth={true} duration={500}>
                 <button className="anchor">About Me</button>
               </Link>
               <button className="anchor">Download CV</button>
