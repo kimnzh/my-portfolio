@@ -9,3 +9,4 @@
 
 - Routing is removed, only with scroll for the navigation
 - Adjusted the responsives for the home section and the navbar
+- Website Deployed
