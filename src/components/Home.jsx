@@ -52,7 +52,7 @@ export default function Home() {
   };
 
   return (
-    <section className="lg:min-h-screen px-4 lg:px-16 2xl:px-32 grid grid-rows-[1fr]">
+    <section className="min-h-screen px-4 lg:px-16 2xl:px-32 grid grid-rows-[1fr]">
       <div className="flex items-start lg:items-center mt-12 sm:mt-16 2xl:mt-20">
         <div className="w-full grid lg:grid-rows-1 lg:grid-cols-[1fr_40%] lg:gap-16 2xl:gap-16">
           <div className="flex justify-center w-full px-10 lg:px-8 py-10 lg:order-last">
