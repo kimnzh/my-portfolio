@@ -122,7 +122,7 @@ export default function Home() {
           <div className="self-center px-4">
             <h1 className="font-semibold text-default-dark sm:text-xl lg:text-3xl 2xl:text-5xl">
               Hello, World! <span className="text-default">I am</span>
-              <span className="block font-bold text-dark text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl my-2 2xl:my-4">
+              <span className="block font-bold text-dark text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl my-2 2xl:my-4">
                 Hakim Nizami
               </span>
             </h1>

@@ -16,3 +16,4 @@
 - Added typewriter for the Home section
 - Adjusted the responives for About Me section
 - Blurring the Navbar
+  NOTE: Still need to work on the color for the typewriter
