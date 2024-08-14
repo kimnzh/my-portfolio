@@ -23,6 +23,13 @@
   @apply -translate-y-[12px] -rotate-[225deg];
 }
 
+@media (min-width: 640px) {
+  .sm\:navbar-blur {
+    @apply bg-opacity-90;
+    backdrop-filter: blur(5px);
+  }
+}
+
 /* HOME */
 .socmed-button {
   @apply absolute w-[20%] aspect-square bg-primary rounded-[20%] shadow-md z-10 hover:drop-shadow-2xl hover:scale-110 transition duration-200 ease-in-out active:bg-light active:transition-none;
@@ -30,6 +37,10 @@
 
 .anchor {
   @apply w-full font-semibold text-background bg-primary py-3 rounded-full hover:shadow-lg hover:bg-light transition duration-300 ease-in-out sm:px-8;
+}
+
+.glowing-text {
+  text-shadow: 0 0 10px hsla(0, 0%, 100%, 0.5), 0 0 20px hsla(0, 0%, 100%, 0.2);
 }
 
 /* EDUCATION */

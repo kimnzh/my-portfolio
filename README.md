@@ -10,3 +10,9 @@
 - Routing is removed, only with scroll for the navigation
 - Adjusted the responsives for the home section and the navbar
 - Website Deployed
+
+**Third Draft**:
+
+- Added typewriter for the Home section
+- Adjusted the responives for About Me section
+- Blurring the Navbar

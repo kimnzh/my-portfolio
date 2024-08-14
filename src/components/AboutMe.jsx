@@ -1,12 +1,14 @@
 export default function AboutMe() {
   return (
-    <section id="about" className="min-h-screen px-4 lg:px-16 font-poppins">
-      <div className="pt-20 sm:pt-24 px-4 flex flex-wrap">
-        <div className="h-12 xl:mt-4 mb-4 sm:mb-6 xl:mb-8 flex items-center rounded-full bg-primary sm:scale-110 xl:scale-125">
-          <h4 className="text-2xl font-bold text-background px-8">About Me</h4>
+    <section className="pt-12 sm:pt-16 2xl:pt-28 px-4 lg:px-16 2xl:px-32">
+      <div className="px-4 flex flex-wrap">
+        <div className="h-12 md:h-14 xl:h-16 2xl:h-24 mt-4 lg:mt-6 2xl:mt-8 mb-3 lg:mb-4 2xl:mb-5 mx-auto flex items-center rounded-full bg-primary">
+          <h4 className="text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-background px-8">
+            About Me
+          </h4>
         </div>
         <div className="w-full">
-          <p className="text-base text-default font-semibold leading-8 sm:text-lg sm:leading-9">
+          <p className="md:text-[1.25rem] xl:text-[1.375rem] xl:leading-loose 2xl:text-[2rem] text-default font-semibold leading-8 sm:text-lg sm:leading-9">
             My full name is{" "}
             <span className="font-bold">Muhamad Hakim Nizami</span>, usually
             called <span className="font-bold">Hakim</span>. I am a first-year{" "}

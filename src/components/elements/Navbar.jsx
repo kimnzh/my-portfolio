@@ -13,6 +13,23 @@ export default function Navbar({ currentId }) {
   const [currentNavItems, setCurrentNavItems] = useState(navItems);
   const navMenuRef = useRef(null);
   const hamburgerRef = useRef(null);
+  const [isNavbarFixed, setIsNavbarFixed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const fixedNav = headerRef.current.offsetTop;
+      if (window.scrollY > fixedNav) {
+        setIsNavbarFixed(true);
+      } else {
+        setIsNavbarFixed(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     setCurrentNavItems(
@@ -48,8 +65,15 @@ export default function Navbar({ currentId }) {
     setIsMenuOpen(false);
   };
 
+  const headerRef = useRef(null);
+
   return (
-    <header className="h-12 sm:h-16 2xl:h-20 flex items-center fixed top-0 left-0 right-0 bg-primary shadow-md z-[9999]">
+    <header
+      ref={headerRef}
+      className={`${
+        isNavbarFixed ? "sm:navbar-blur" : ""
+      } h-12 sm:h-16 2xl:h-20 flex items-center fixed top-0 left-0 right-0 bg-primary shadow-md z-[9999]`}
+    >
       <div className="h-full w-full px-6 sm:px-12 flex justify-between items-center cursor-pointer">
         <Link to="home" smooth={true} duration={500}>
           <span className="text-xl sm:text-2xl 2xl:text-4xl font-bold text-white">

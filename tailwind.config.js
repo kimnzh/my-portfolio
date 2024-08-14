@@ -12,6 +12,7 @@ export default {
         "extra-light": "#e5e7eb", // emerald-200
         dark: "#030712", // emerald-950
         default: "#334155", // slate-700
+        "default-dark": "#1e293b",
         background: "#eee",
       },
       screens: {
