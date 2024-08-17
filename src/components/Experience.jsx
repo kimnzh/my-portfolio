@@ -14,8 +14,11 @@ const images = {
 
 export default function Experience() {
   return (
-    <section id="experience" className="flex justify-center lg:px-16 2xl:px-32">
-      <div className="pt-16 sm:pt-20 pb-8">
+    <section
+      id="experience"
+      className="flex justify-center pt-12 sm:pt-16 2xl:pt-28 px-4 lg:px-16 2xl:px-32"
+    >
+      <div className="pb-8">
         <div className="flex justify-end flex-wrap px-4">
           <div className="h-12 md:h-14 xl:h-16 2xl:h-24 mt-4 lg:mt-6 2xl:mt-8 mb-3 lg:mb-4 2xl:mb-5 mx-auto flex items-center rounded-full bg-slate-900">
             <h4 className="text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-white px-8">
