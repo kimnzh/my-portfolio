@@ -17,3 +17,10 @@
 - Adjusted the responives for About Me section
 - Blurring the Navbar
   NOTE: Still need to work on the color for the typewriter
+
+**Fourth Draft**:
+
+- Adjusted the responsives for all sections
+- Changed the coloring (preparing for dark and light mode)
+- Added Footer
+- Prepare for Projects Section for the next draft

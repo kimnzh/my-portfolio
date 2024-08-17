@@ -1,6 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 
 import Navbar from "./components/elements/Navbar";
+import Footer from "./components/elements/Footer";
 import Home from "./components/Home";
 import AboutMe from "./components/AboutMe";
 import Education from "./components/Education";
@@ -22,6 +23,7 @@ function App() {
       <div id="experience">
         <Experience />
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }

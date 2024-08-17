@@ -2,13 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* NAVBAR */
-.navbar-fixed {
-  @apply fixed z-[9999];
+/* GENERAL */
+.glowing-text {
+  text-shadow: 0 0 10px hsla(0, 0%, 100%, 0.5), 0 0 20px hsla(0, 0%, 100%, 0.2);
 }
 
+/* NAVBAR */
 .hamburger-line {
-  @apply w-[34px] h-[4px] my-2 block rounded-md transition duration-500 ease-in-out bg-white group-hover:bg-extra-light hover:duration-300;
+  @apply w-[34px] h-[4px] my-2 block rounded-md transition duration-300 ease-in-out bg-black group-hover:bg-slate-700;
 }
 
 .hamburger-active > span:nth-child(1) {
@@ -23,37 +24,32 @@
   @apply -translate-y-[12px] -rotate-[225deg];
 }
 
-@media (min-width: 640px) {
-  .sm\:navbar-blur {
-    @apply bg-opacity-90;
-    backdrop-filter: blur(5px);
+.navbar-blur {
+  @apply bg-opacity-90;
+  @media (min-width: 1024px) {
+    backdrop-filter: blur(2px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:navbar-blur-none {
+    @apply bg-opacity-100;
+    backdrop-filter: none;
   }
 }
 
 /* HOME */
 .socmed-button {
-  @apply absolute w-[20%] aspect-square bg-primary rounded-[20%] shadow-md z-10 hover:drop-shadow-2xl hover:scale-110 transition duration-200 ease-in-out active:bg-light active:transition-none;
+  @apply absolute w-[20%] aspect-square bg-slate-900 rounded-[20%] shadow-md z-10 hover:drop-shadow-2xl hover:scale-110 transition duration-200 ease-in-out active:bg-slate-800 active:transition-none;
 }
 
 .anchor {
-  @apply w-full font-semibold text-background bg-primary py-3 rounded-full hover:shadow-lg hover:bg-light transition duration-300 ease-in-out sm:px-8;
-}
-
-.glowing-text {
-  text-shadow: 0 0 10px hsla(0, 0%, 100%, 0.5), 0 0 20px hsla(0, 0%, 100%, 0.2);
+  @apply w-full font-semibold text-background bg-slate-900 py-3 rounded-full hover:shadow-lg hover:bg-slate-800 transition duration-300 ease-in-out sm:px-8;
 }
 
 /* EDUCATION */
-.education-cell-first {
-  @apply mx-3 w-full pb-0 bg-primary mt-8 mb-1.5 rounded-[16px] hover:bg-light transition-all duration-300 md:w-[45%] md:mt-9 lg:mt-10;
-}
-
 .education-cell {
-  @apply mx-3 w-full pb-0 bg-primary my-1.5 rounded-[16px] hover:bg-light transition-all duration-300 md:w-[45%] md:mt-9 lg:mt-10;
-}
-
-.education-cell-last {
-  @apply mx-3 w-full pb-0 bg-primary mt-1.5 mb-3 rounded-[16px] hover:bg-light transition-all duration-300 md:w-[45%];
+  @apply h-full flex flex-col max-h-fit w-full bg-slate-900 rounded-[16px] hover:bg-slate-800 transition-all duration-300;
 }
 
 /* EXPERIENCE */

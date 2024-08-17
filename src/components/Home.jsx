@@ -1,4 +1,4 @@
-import React from "react";
+import { Fragment } from "react";
 import { Link } from "react-scroll";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
@@ -43,21 +43,21 @@ export default function Home() {
       });
 
       return (
-        <React.Fragment key={index}>
+        <Fragment key={index}>
           {styledWord}
           {index < words.length - 1 && " "}
-        </React.Fragment>
+        </Fragment>
       );
     });
   };
 
   return (
-    <section className="min-h-screen px-4 lg:px-16 2xl:px-32 grid grid-rows-[1fr]">
+    <section className="min-h-[560px] max-h-[560px] sm:min-h-[576px] sm:max-h-[576px] md:min-h-[592px] md:max-h-[592px] lg:min-h-screen lg:max-h-none px-4 lg:px-16 2xl:px-32 grid grid-rows-[1fr]">
       <div className="flex items-start lg:items-center mt-12 sm:mt-16 2xl:mt-20">
         <div className="w-full grid lg:grid-rows-1 lg:grid-cols-[1fr_40%] lg:gap-16 2xl:gap-16">
           <div className="flex justify-center w-full px-10 lg:px-8 py-10 lg:order-last">
             <div className="max-w-72 lg:max-w-[20.75rem] 2xl:max-w-[36rem] aspect-square relative">
-              <div className="border-solid border-light border-2 2xl:border-3 aspect-square rounded-full shadow-xl overflow-hidden">
+              <div className="border-solid border-slate-900 border-2 2xl:border-4 aspect-square rounded-full shadow-xl overflow-hidden">
                 <img
                   src={profile}
                   alt="Potrait"
@@ -120,15 +120,15 @@ export default function Home() {
             </div>
           </div>
           <div className="self-center px-4">
-            <h1 className="font-semibold text-default-dark sm:text-xl lg:text-3xl 2xl:text-5xl">
-              Hello, World! <span className="text-default">I am</span>
-              <span className="block font-bold text-dark text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl my-2 2xl:my-4">
+            <h1 className="font-semibold text-slate-900 text-lg sm:text-xl lg:text-3xl 2xl:text-5xl">
+              Hello, World! <span className="text-slate-900">I am</span>
+              <span className="block font-bold text-slate-900 text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl my-2 2xl:my-4">
                 Hakim Nizami
               </span>
             </h1>
-            <h2 className="font-medium glowing-text text-default mb-5 text-2xl lg:text-4xl 2xl:text-7xl">
+            <h2 className="font-medium text-slate-900 mb-5 text-2xl lg:text-4xl 2xl:text-7xl dark:glowing-text">
               a{" "}
-              <span className="text-default-dark font-semibold">
+              <span className="text-slate-900 font-semibold">
                 {applyStyles(text)}
               </span>
               <Cursor />

@@ -13,7 +13,7 @@ export default {
         dark: "#030712", // emerald-950
         default: "#334155", // slate-700
         "default-dark": "#1e293b",
-        background: "#eee",
+        background: "#fff",
       },
       screens: {
         xs: "440px",

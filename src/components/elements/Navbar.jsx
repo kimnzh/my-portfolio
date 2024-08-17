@@ -8,13 +8,28 @@ const navItems = [
   { id: "experience", text: "Experience", name: "Experience", current: false },
 ];
 
-export default function Navbar({ currentId }) {
+export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [currentNavItems, setCurrentNavItems] = useState(navItems);
+  const [isNavbarFixed, setIsNavbarFixed] = useState(false);
   const navMenuRef = useRef(null);
   const hamburgerRef = useRef(null);
-  const [isNavbarFixed, setIsNavbarFixed] = useState(false);
 
+  // // Dark toggle
+  // const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // const toggleDark = () => {
+  //   setIsDarkMode((prevMode) => {
+  //     const newMode = !prevMode;
+  //     if (newMode) {
+  //       document.documentElement.classList.add("dark");
+  //     } else {
+  //       document.documentElement.classList.remove("dark");
+  //     }
+  //     return newMode;
+  //   });
+  // };
+
+  // To handle the navbar when it is scrolled (it becomes blurred)
   useEffect(() => {
     const handleScroll = () => {
       const fixedNav = headerRef.current.offsetTop;
@@ -31,15 +46,7 @@ export default function Navbar({ currentId }) {
     };
   }, []);
 
-  useEffect(() => {
-    setCurrentNavItems(
-      navItems.map((item) => ({
-        ...item,
-        current: item.id === currentId,
-      }))
-    );
-  }, [currentId]);
-
+  // Handle to close the navbar when clicked outside the elements
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (
@@ -57,6 +64,7 @@ export default function Navbar({ currentId }) {
     };
   }, []);
 
+  // Toggle the states
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -65,22 +73,35 @@ export default function Navbar({ currentId }) {
     setIsMenuOpen(false);
   };
 
+  // Reference for the header tag
   const headerRef = useRef(null);
 
   return (
     <header
       ref={headerRef}
-      className={`${
-        isNavbarFixed ? "sm:navbar-blur" : ""
-      } h-12 sm:h-16 2xl:h-20 flex items-center fixed top-0 left-0 right-0 bg-primary shadow-md z-[9999]`}
+      className={`${isMenuOpen ? "navbar-blur sm:shadow-lg" : ""} 
+        ${
+          !isMenuOpen && isNavbarFixed ? "navbar-blur shadow-lg" : ""
+        } h-12 sm:h-16 2xl:h-20 flex items-center fixed top-0 left-0 right-0 bg-white z-[9999] transition duration-300`}
     >
-      <div className="h-full w-full px-6 sm:px-12 flex justify-between items-center cursor-pointer">
-        <Link to="home" smooth={true} duration={500}>
-          <span className="text-xl sm:text-2xl 2xl:text-4xl font-bold text-white">
+      <div className="text-slate-900 h-full w-full px-6 sm:px-12 flex justify-between items-center cursor-pointer">
+        <Link
+          className="hover:text-slate-800 transition duration-300"
+          to="home"
+          smooth={true}
+          duration={500}
+        >
+          <span className="text-xl sm:text-2xl 2xl:text-4xl font-extrabold">
             Hakim Nizami.
           </span>
         </Link>
         <div className="flex items-center">
+          {/* <div className="flex bg-blue-600">
+            <span>light</span>
+            <input type="checkbox"></input>
+            <label htmlFor="dark-toggle" onClick={toggleDark}></label>
+            <span>dark</span>
+          </div> */}
           <button
             ref={hamburgerRef}
             id="hamburger"
@@ -98,12 +119,14 @@ export default function Navbar({ currentId }) {
             ref={navMenuRef}
             id="nav-menu"
             className={`${
-              isMenuOpen ? "" : "scale-y-0"
-            } lg:scale-y-100 w-full sm:max-w-64 lg:max-w-full lg:h-full py-5 lg:p-0 absolute lg:static top-full right-0 sm:right-4 left-0 sm:left-auto bg-primary lg:bg-transparent rounded-b-lg sm:rounded-lg lg:rounded-none transition lg:transition-none duration-300 origin-top z-[9999]`}
+              isMenuOpen ? "navbar-blur lg:navbar-blur-none" : "scale-y-0"
+            } ${
+              isNavbarFixed ? "navbar-blur lg:navbar-blur-none" : ""
+            } bg-white lg:bg-transparent lg:scale-y-100 shadow-lg w-full sm:max-w-64 lg:max-w-full lg:h-full py-5 lg:p-0 absolute lg:static top-full right-0 sm:right-4 left-0 sm:left-auto rounded-b-lg sm:rounded-lg lg:rounded-none lg:shadow-none transition lg:transition-none duration-300 origin-top z-[9999]`}
           >
-            <ul className="block lg:flex text-white 2xl:text-xl">
-              {currentNavItems.map((item, index) => (
-                <li key={index} className="group">
+            <ul className="block lg:flex 2xl:text-xl">
+              {navItems.map((item, index) => (
+                <li key={index} className="font-medium group">
                   <Link
                     to={item.id}
                     smooth={true}
@@ -117,7 +140,7 @@ export default function Navbar({ currentId }) {
                         item.current
                           ? "max-w-full transition-none"
                           : "group-hover:max-w-full transition-all duration-500"
-                      } bg-white max-w-0 h-[2px] 2xl:h-[3px] hidden lg:block`}
+                      } bg-slate-900 max-w-0 h-[2px] 2xl:h-[3px] hidden lg:block`}
                       tabIndex="0"
                     ></span>
                   </Link>
