@@ -15,6 +15,7 @@ export default function Home() {
       "Math Enthusiast",
       "Web Developer",
       "Problem Solver",
+      "Full-time Learner",
     ],
     loop: true,
     delaySpeed: 5000,
@@ -52,7 +53,7 @@ export default function Home() {
   };
 
   return (
-    <section className="min-h-[560px] max-h-[560px] sm:min-h-[576px] sm:max-h-[576px] md:min-h-[592px] md:max-h-[592px] lg:min-h-screen lg:max-h-none px-4 lg:px-16 2xl:px-32 grid grid-rows-[1fr]">
+    <section className="min-h-fit max-h-fit lg:min-h-screen lg:max-h-none px-4 lg:px-16 2xl:px-32 grid grid-rows-[1fr]">
       <div className="flex items-start lg:items-center mt-12 sm:mt-16 2xl:mt-20">
         <div className="w-full grid lg:grid-rows-1 lg:grid-cols-[1fr_40%] lg:gap-16 2xl:gap-16">
           <div className="flex justify-center w-full px-10 lg:px-8 py-10 lg:order-last">
@@ -137,7 +138,12 @@ export default function Home() {
               <Link to="about-me" smooth={true} duration={500}>
                 <button className="anchor">About Me</button>
               </Link>
-              <button className="anchor">Download CV</button>
+              <a
+                href="https://drive.google.com/file/d/1cFVKeOSfZtjoHqsEhtbCUMybKoKyDKrl/view?usp=sharing"
+                target="_blank"
+              >
+                <button className="anchor">Download CV</button>
+              </a>
             </div>
           </div>
         </div>
