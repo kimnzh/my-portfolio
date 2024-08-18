@@ -24,3 +24,9 @@
 - Changed the coloring (preparing for dark and light mode)
 - Added Footer
 - Prepare for Projects Section for the next draft
+
+**Fourth .1 Draft**
+
+- Added Projects (only one project for now)
+- Need to add tech stack next
+- Need to add interactions in projects

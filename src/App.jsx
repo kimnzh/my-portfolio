@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import AboutMe from "./components/AboutMe";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
+import Projects from "./components/Projects";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
       </div>
       <div id="experience">
         <Experience />
+      </div>
+      <div id="projects">
+        <Projects />
       </div>
       <Footer />
     </BrowserRouter>

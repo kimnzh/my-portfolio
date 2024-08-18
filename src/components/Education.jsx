@@ -13,10 +13,7 @@ const images = {
 export default function Education() {
   return (
     <>
-      <section
-        id="education"
-        className="flex justify-center pt-12 sm:pt-16 2xl:pt-28 px-4 lg:px-16 2xl:px-32"
-      >
+      <section className="flex justify-center pt-12 sm:pt-16 2xl:pt-28 px-4 lg:px-16 2xl:px-32">
         <div className="mt-4 lg:mt-6 2xl:mt-8 pb-8">
           <div className="flex flex-wrap justify-center px-4">
             <div className="h-12 md:h-14 xl:h-16 2xl:h-24 mx-auto flex items-center rounded-full bg-slate-900 absolute">

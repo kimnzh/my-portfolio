@@ -3,9 +3,10 @@ import { Link } from "react-scroll";
 import PropTypes from "prop-types";
 
 const navItems = [
-  { id: "about-me", text: "About Me", name: "AboutMe", current: false },
-  { id: "education", text: "Education", name: "Education", current: false },
-  { id: "experience", text: "Experience", name: "Experience", current: false },
+  { id: "about-me", text: "About Me", name: "AboutMe" },
+  { id: "education", text: "Education", name: "Education" },
+  { id: "experience", text: "Experience", name: "Experience" },
+  { id: "projects", text: "Projects", name: "Projects" },
 ];
 
 export default function Navbar() {
