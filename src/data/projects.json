@@ -1,0 +1,31 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "image": "portfolio",
+      "title": "Portfolio Website",
+      "notebook": "",
+      "github": "https://github.com/kimnzh/my-portfolio",
+      "preview": "https://kimnzh.github.io/my-portfolio/",
+      "description": "The one you're looking at right now. This website serves as my portfolio as well as my own personal website to document the progress I've made in my professional career."
+    },
+    {
+      "id": "2",
+      "image": "datathon24",
+      "title": "Ristek Datathon 2024",
+      "notebook": "https://colab.research.google.com/drive/11bYAf7Vf1cls33JChPokiIDuWQqws3Tf?usp=sharing",
+      "github": "",
+      "preview": "",
+      "description": "Machine learning developed using the XGBoost algorithm with feature engineering to predict frauds with given loan activities and some anonymous parameters. This was for a competition titled \"Ristek Datathon 2024\" and this model was ranked 97/220 based on accuracy."
+    },
+    {
+      "id": "3",
+      "image": "siakC",
+      "title": "Siak Sederhana on Console",
+      "notebook": "",
+      "github": "https://github.com/kimnzh/final-project-group1",
+      "preview": "",
+      "description": "A program in C that has the functionality of SIAk-NG, the system mainly used in Universitas Indonesia’s academic information as part of my final project in Computer Engineering subject “Pemrograman Lanjut”. It has both lecturer and student mode that has their distinct functionality."
+    }
+  ]
+}

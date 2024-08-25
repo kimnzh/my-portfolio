@@ -13,21 +13,21 @@ const images = {
 export default function Education() {
   return (
     <>
-      <section className="flex justify-center pt-12 sm:pt-16 2xl:pt-28 px-4 lg:px-16 2xl:px-32">
-        <div className="mt-4 lg:mt-6 2xl:mt-8 pb-8">
+      <section className="flex justify-center px-4 pt-12 sm:pt-16 lg:px-16 2xl:px-32 2xl:pt-28">
+        <div className="mt-4 pb-8 lg:mt-6 2xl:mt-8">
           <div className="flex flex-wrap justify-center px-4">
-            <div className="h-12 md:h-14 xl:h-16 2xl:h-24 mx-auto flex items-center rounded-full bg-slate-900 absolute">
-              <h4 className="text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-white px-8">
+            <div className="absolute mx-auto flex h-12 items-center rounded-full bg-slate-900 transition duration-300 dark:bg-white md:h-14 xl:h-16 2xl:h-24">
+              <h4 className="px-8 text-2xl font-bold text-white transition duration-300 dark:text-slate-950 md:text-3xl xl:text-4xl 2xl:text-5xl">
                 Education
               </h4>
             </div>
-            <div className="px-3 pb-3 pt-8 md:pt-10 xl:pt-12 2xl:pt-20 mt-[22px] md:mt-[26px] xl:mt-[30px] 2xl:mt-[44px] grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 w-full bg-white rounded-[24px] border-solid border-4 2xl:border-8 border-slate-900">
+            <div className="mt-[22px] grid w-full grid-cols-1 gap-3 rounded-[24px] border-4 border-solid border-slate-900 bg-white px-3 pb-3 pt-8 transition duration-300 dark:border-white dark:bg-slate-950 md:mt-[26px] md:grid-cols-2 md:pt-10 xl:mt-[30px] xl:grid-cols-3 xl:pt-12 2xl:mt-[44px] 2xl:border-8 2xl:pt-20">
               {data.schools.map((school) => (
                 <div
                   key={school.id}
                   className={`${
                     school.id === data.schools.length
-                      ? "md:w-[60%] xl:w-[100%] md:col-span-2 md:justify-self-center xl:col-span-1"
+                      ? "md:col-span-2 md:w-[60%] md:justify-self-center xl:col-span-1 xl:w-[100%]"
                       : ""
                   }`}
                 >
@@ -36,20 +36,20 @@ export default function Education() {
                     target="_blank"
                     className="education-cell group"
                   >
-                    <div className="m-1 bg-white max-w-full h-48 rounded-[12px] overflow-hidden">
+                    <div className="m-1 h-48 max-w-full overflow-hidden rounded-[12px]">
                       <img
                         src={images[school.image]}
                         alt=""
-                        className="w-full h-full object-cover"
+                        className="h-full w-full object-cover"
                       />
                     </div>
                     <div className="mx-1 mb-1">
                       <div className="mt-3 flex justify-center">
-                        <h1 className="text-sm xs:text-lg 2xl:text-2xl px-5 rounded-[12px] text-white font-semibold border-solid border-2 border-white md:text-xl">
+                        <h1 className="rounded-[12px] border-2 border-solid border-white px-5 text-sm font-semibold text-white transition duration-300 dark:border-slate-950 dark:text-slate-950 xs:text-lg md:text-xl 2xl:text-2xl">
                           {school.name}
                         </h1>
                       </div>
-                      <h1 className="text-center my-1 text-xs xs:text-sm 2xl:text-lg text-white font-semibold md:text-base">
+                      <h1 className="my-1 text-center text-xs font-semibold text-white transition duration-300 dark:text-slate-950 xs:text-sm md:text-base 2xl:text-lg">
                         Grade: {school.grade}
                       </h1>
                       {school.cells.map((cell) => (
@@ -57,20 +57,20 @@ export default function Education() {
                           key={cell.id}
                           className={`mx-1 ${
                             cell.id === school.cells.length ? "mb-1" : "mb-2"
-                          } p-3 bg-white max-w-full rounded-[12px] text-xs 2xl:text-base text-slate-900 group-hover:textx-slate-800 font-semibold md:text-sm`}
+                          } max-w-full rounded-[12px] bg-white p-3 text-xs font-semibold text-slate-900 transition duration-300 group-hover:text-slate-800 dark:bg-slate-950 dark:text-white dark:group-hover:text-slate-300 md:text-sm 2xl:text-base`}
                         >
                           {cell.major === "" ? (
                             <></>
                           ) : (
                             <div className="mb-2 flex items-center">
-                              <span className="max-w-2 h-2 aspect-square mr-2 rounded-full bg-slate-900 group-hover:bg-slate-800 transition-all duration-300"></span>
+                              <span className="mr-2 aspect-square h-2 max-w-2 rounded-full bg-slate-900 transition-all duration-300 group-hover:bg-slate-800 dark:bg-white dark:group-hover:bg-slate-300"></span>
                               <h6>{cell.major}</h6>
                             </div>
                           )}
                           <div className="grid grid-cols-1 gap-2 xs:flex xs:items-center xs:justify-between">
                             <h6 className="ml-4">{cell.score}</h6>
                             <div className="flex justify-end">
-                              <div className="border-solid border-2 border-slate-900 px-2 rounded-[8px] group-hover:border-slate-800 transition-all duration-300">
+                              <div className="rounded-[8px] border-2 border-solid border-slate-900 px-2 text-slate-900 transition-all duration-300 group-hover:border-slate-800 dark:border-white dark:text-white dark:group-hover:border-slate-300 dark:group-hover:text-slate-300">
                                 {cell.date}
                               </div>
                             </div>
@@ -79,7 +79,7 @@ export default function Education() {
                             <></>
                           ) : (
                             <div className="flex justify-end pt-2">
-                              <div className="border-solid border-2 border-slate-900 px-2 rounded-[8px] group-hover:border-slate-800 transition-all duration-300">
+                              <div className="rounded-[8px] border-2 border-solid border-slate-900 px-2 text-slate-900 transition-all duration-300 group-hover:border-slate-800 dark:border-white dark:text-white dark:group-hover:border-slate-300 dark:group-hover:text-slate-300">
                                 Expected {cell.expected}
                               </div>
                             </div>
@@ -87,18 +87,18 @@ export default function Education() {
                           {cell.notes.length === 0 ? (
                             <></>
                           ) : (
-                            cell.notes.map((note) => (
-                              <div
-                                key={note.id}
-                                className="mt-2 w-full border-solid border-slate-900 border-2 rounded-[8px] group-hover:border-slate-800 transition duration-300"
-                              >
-                                <h4 className="ml-2 font-bold my-1">NOTE:</h4>
-                                <div className="flex items-center mb-2">
-                                  <span className="max-w-2 h-2 aspect-square mx-2 rounded-full bg-slate-900 group-hover:bg-slate-700 transition-all duration-300"></span>
+                            <div className="mt-2 w-full rounded-[8px] border-2 border-solid border-slate-900 text-slate-900 transition duration-300 group-hover:border-slate-800 dark:border-white dark:text-white dark:group-hover:border-slate-300 dark:group-hover:text-slate-300">
+                              <h4 className="my-1 ml-2 font-bold">NOTE:</h4>
+                              {cell.notes.map((note) => (
+                                <div
+                                  key={note.id}
+                                  className="mb-2 flex items-center"
+                                >
+                                  <span className="mx-2 aspect-square h-2 max-w-2 rounded-full bg-slate-900 transition-all duration-300 group-hover:bg-slate-800 dark:bg-white dark:group-hover:bg-slate-300"></span>
                                   <h6 className="mr-2">{note.note}</h6>
                                 </div>
-                              </div>
-                            ))
+                              ))}
+                            </div>
                           )}
                         </div>
                       ))}

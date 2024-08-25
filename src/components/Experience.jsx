@@ -14,61 +14,61 @@ const images = {
 
 export default function Experience() {
   return (
-    <section className="flex justify-center pt-12 sm:pt-16 2xl:pt-28 px-4 lg:px-16 2xl:px-32">
+    <section className="flex justify-center px-4 pt-12 sm:pt-16 lg:px-16 2xl:px-32 2xl:pt-28">
       <div className="pb-8">
-        <div className="flex justify-end flex-wrap px-4">
-          <div className="h-12 md:h-14 xl:h-16 2xl:h-24 mt-4 lg:mt-6 2xl:mt-8 mb-3 lg:mb-4 2xl:mb-5 mx-auto flex items-center rounded-full bg-slate-900">
-            <h4 className="text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-white px-8">
+        <div className="flex flex-wrap justify-end px-4">
+          <div className="mx-auto mb-3 mt-4 flex h-12 items-center rounded-full bg-slate-900 transition duration-300 dark:bg-white md:h-14 lg:mb-4 lg:mt-6 xl:h-16 2xl:mb-5 2xl:mt-8 2xl:h-24">
+            <h4 className="px-8 text-2xl font-bold text-white transition duration-300 dark:text-slate-950 md:text-3xl xl:text-4xl 2xl:text-5xl">
               Experience
             </h4>
           </div>
-          <ul className="w-full flex flex-col items-end">
+          <ul className="flex w-full flex-col items-end">
             {data.experiences.map((experience) => (
               <li
                 key={experience.id}
                 className={`${
                   experience.id === 1 ? "" : "mt-6"
-                } flex w-full justify-end items-center relative`}
+                } relative flex w-full items-center justify-end`}
               >
-                <div className="min-w-10 max-w-10 min-h-10 max-h-10 mr-4 rounded-full border-solid border-slate-900 border-2 xs:min-w-20 xs:max-w-20 xs:min-h-20 xs:max-h-20 xs:mr-8 lg:min-w-24 lg:max-w-24 lg:min-h-24 lg:max-h-24 lg:mr-12 overflow-hidden">
+                <div className="mr-4 max-h-10 min-h-10 min-w-10 max-w-10 overflow-hidden rounded-full border-2 border-solid border-slate-900 transition duration-300 dark:border-white xs:mr-8 xs:max-h-20 xs:min-h-20 xs:min-w-20 xs:max-w-20 lg:mr-12 lg:max-h-24 lg:min-h-24 lg:min-w-24 lg:max-w-24">
                   <img
                     src={images[experience.image]}
-                    className="w-full h-full object-cover"
+                    className="h-full w-full object-cover"
                   />
                 </div>
                 <div className="experience-cell">
-                  <div className="w-full flex font-semibold mb-3 justify-between items-center text-[10px] xs:text-sm xl:text-base">
+                  <div className="mb-3 flex w-full items-center justify-between text-[10px] font-semibold dark:border-white xs:text-sm xl:text-base">
                     <h6>{experience.period}</h6>
-                    <h6 className="px-3 py-1 text-white bg-slate-900 rounded-lg">
+                    <h6 className="rounded-lg bg-slate-900 px-3 py-1 text-white transition duration-300 dark:bg-white dark:text-slate-950">
                       {experience.type}
                     </h6>
                   </div>
                   <div className="flex flex-col items-end lg:flex-row lg:items-center">
-                    <h1 className="my-2 text-end font-semibold text-slate-900 text-xl xs:text-2xl xl:text-3xl">
+                    <h1 className="my-2 text-end text-xl font-semibold xs:text-2xl xl:text-3xl">
                       {experience.role}
                     </h1>
-                    <span className="hidden font-bold mx-2 lg:block text-2xl">
+                    <span className="mx-2 hidden text-2xl font-bold lg:block">
                       -
                     </span>
-                    <h3 className="font-semibold text-slate-900 text-sm xs:text-lg lg:text-2xl xl:text-3xl">
+                    <h3 className="text-sm font-semibold xs:text-lg lg:text-2xl xl:text-3xl">
                       {experience.name}
                     </h3>
                   </div>
                   {experience.desc === "" ? (
                     <></>
                   ) : (
-                    <div className="text-text-slate-900 font-semibold mt-2 w-full border-solid border-slate-900 border-2 rounded-lg text-xs xs:text-sm lg:text-base 2xl:text-xl p-2">
+                    <div className="mt-2 w-full rounded-lg border-2 border-solid border-slate-900 p-2 text-xs font-semibold text-slate-950 transition duration-300 dark:border-white dark:text-white xs:text-sm lg:text-base 2xl:text-xl">
                       {experience.desc}
                     </div>
                   )}
                 </div>
-                <span className="max-w-3 h-3 aspect-square rounded-full bg-slate-900 absolute top-2 right-2"></span>
+                <span className="absolute right-2 top-2 aspect-square h-3 max-w-3 rounded-full bg-slate-900 transition duration-300 dark:bg-white"></span>
                 <span
                   className={`${
                     experience.id === data.experiences.length
                       ? ""
                       : "scale-y-110 lg:scale-y-[115%]"
-                  } bg-slate-900 min-w-1 max-w-1 h-full mx-3 origin-top relative top-4 rounded-b-full`}
+                  } relative top-4 mx-3 h-full min-w-1 max-w-1 origin-top rounded-b-full bg-slate-900 transition duration-300 dark:bg-white`}
                 ></span>
               </li>
             ))}

@@ -53,16 +53,16 @@ export default function Home() {
   };
 
   return (
-    <section className="min-h-fit max-h-fit lg:min-h-screen lg:max-h-none px-4 lg:px-16 2xl:px-32 grid grid-rows-[1fr]">
-      <div className="flex items-start lg:items-center mt-12 sm:mt-16 2xl:mt-20">
-        <div className="w-full grid lg:grid-rows-1 lg:grid-cols-[1fr_40%] lg:gap-16 2xl:gap-16">
-          <div className="flex justify-center w-full px-10 lg:px-8 py-10 lg:order-last">
-            <div className="max-w-72 lg:max-w-[20.75rem] 2xl:max-w-[36rem] aspect-square relative">
-              <div className="border-solid border-slate-900 border-2 2xl:border-4 aspect-square rounded-full shadow-xl overflow-hidden">
+    <section className="grid max-h-fit min-h-fit grid-rows-[1fr] px-4 lg:max-h-none lg:min-h-screen lg:px-16 2xl:px-32">
+      <div className="mt-12 flex items-start sm:mt-16 lg:items-center 2xl:mt-20">
+        <div className="grid w-full lg:grid-cols-[1fr_40%] lg:grid-rows-1 lg:gap-16 2xl:gap-16">
+          <div className="flex w-full justify-center px-10 py-10 lg:order-last lg:px-8">
+            <div className="relative aspect-square max-w-72 lg:max-w-[20.75rem] 2xl:max-w-[36rem]">
+              <div className="aspect-square overflow-hidden rounded-full border-2 border-solid border-slate-900 shadow-xl 2xl:border-4">
                 <img
                   src={profile}
                   alt="Potrait"
-                  className="w-full h-full object-cover scale-125"
+                  className="h-full w-full scale-125 object-cover"
                 />
               </div>
               <a
@@ -72,7 +72,7 @@ export default function Home() {
                 <button className="socmed-button left-[5%] top-[5%]">
                   <div className="flex items-center justify-center">
                     <img
-                      className="w-[75%] invert"
+                      className="w-[75%] invert transition duration-300 dark:filter-none"
                       src={instagramIcon}
                       alt="instagram"
                     />
@@ -83,7 +83,7 @@ export default function Home() {
                 <button className="socmed-button right-[5%] top-[5%]">
                   <div className="flex items-center justify-center">
                     <img
-                      className="w-[75%] invert"
+                      className="w-[75%] invert transition duration-300 dark:filter-none"
                       src={githubIcon}
                       alt="github"
                     />
@@ -94,10 +94,10 @@ export default function Home() {
                 href="https://www.youtube.com/@hakimnizami6651"
                 target="_blank"
               >
-                <button className="socmed-button right-[5%] bottom-[5%]">
+                <button className="socmed-button bottom-[5%] right-[5%]">
                   <div className="flex items-center justify-center">
                     <img
-                      className="w-[65%] invert"
+                      className="w-[65%] invert transition duration-300 dark:filter-none"
                       src={youtubeIcon}
                       alt="youtube"
                     />
@@ -108,10 +108,10 @@ export default function Home() {
                 href="https://www.linkedin.com/in/muhamad-hakim-nizami-a79120293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                 target="_blank"
               >
-                <button className="socmed-button left-[5%] bottom-[5%]">
+                <button className="socmed-button bottom-[5%] left-[5%]">
                   <div className="flex items-center justify-center">
                     <img
-                      className="w-[65%] invert"
+                      className="w-[65%] invert transition duration-300 dark:filter-none"
                       src={linkedinIcon}
                       alt="linkedin"
                     />
@@ -120,21 +120,21 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="self-center px-4">
-            <h1 className="font-semibold text-slate-900 text-lg sm:text-xl lg:text-3xl 2xl:text-5xl">
-              Hello, World! <span className="text-slate-900">I am</span>
-              <span className="block font-bold text-slate-900 text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl my-2 2xl:my-4">
+          <div className="self-center px-4 text-slate-900 transition-all duration-300 dark:text-white">
+            <h1 className="text-lg font-semibold sm:text-xl lg:text-3xl 2xl:text-5xl">
+              Hello, World! I am
+              <span className="my-2 block text-4xl font-bold md:text-5xl lg:text-6xl 2xl:my-4 2xl:text-8xl">
                 Hakim Nizami
               </span>
             </h1>
-            <h2 className="font-medium text-slate-900 mb-5 text-2xl lg:text-4xl 2xl:text-7xl dark:glowing-text">
+            <h2 className="mb-5 text-2xl font-medium lg:text-4xl 2xl:text-7xl">
               a{" "}
-              <span className="text-slate-900 font-semibold">
+              <span className="dark:glowing-text font-semibold">
                 {applyStyles(text)}
               </span>
               <Cursor />
             </h2>
-            <div className="w-full mt-3 lg:mt-7 grid grid-cols-2 gap-2 lg:gap-5 h-fit text-xs sm:text-base 2xl:text-3xl">
+            <div className="mt-3 grid h-fit w-full grid-cols-2 gap-2 text-xs sm:text-base lg:mt-7 lg:gap-5 2xl:text-3xl">
               <Link to="about-me" smooth={true} duration={500}>
                 <button className="anchor">About Me</button>
               </Link>

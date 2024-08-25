@@ -30,3 +30,12 @@
 - Added Projects (only one project for now)
 - Need to add tech stack next
 - Need to add interactions in projects
+
+**Fifth Draft**
+
+- Upgraded the Projects section
+- Added dark and light mode
+
+**Plans**
+
+- Adding tech stack and contact me

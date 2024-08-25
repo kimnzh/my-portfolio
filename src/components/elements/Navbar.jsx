@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-scroll";
-import PropTypes from "prop-types";
+
+import lightImage from "../../assets/symbol/sun.svg";
+import darkImage from "../../assets/symbol/moon.svg";
 
 const navItems = [
   { id: "about-me", text: "About Me", name: "AboutMe" },
@@ -14,21 +16,33 @@ export default function Navbar() {
   const [isNavbarFixed, setIsNavbarFixed] = useState(false);
   const navMenuRef = useRef(null);
   const hamburgerRef = useRef(null);
+  const darkModeRef = useRef(null);
 
-  // // Dark toggle
-  // const [isDarkMode, setIsDarkMode] = useState(false);
+  // Dark toggle
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    if (typeof window !== "undefined") {
+      return (
+        localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      );
+    }
+    return false;
+  });
 
-  // const toggleDark = () => {
-  //   setIsDarkMode((prevMode) => {
-  //     const newMode = !prevMode;
-  //     if (newMode) {
-  //       document.documentElement.classList.add("dark");
-  //     } else {
-  //       document.documentElement.classList.remove("dark");
-  //     }
-  //     return newMode;
-  //   });
-  // };
+  const toggleDark = () => {
+    setIsDarkMode((prevMode) => {
+      const newMode = !prevMode;
+      if (newMode) {
+        document.documentElement.classList.add("dark");
+        localStorage.theme = "dark";
+      } else {
+        document.documentElement.classList.remove("dark");
+        localStorage.theme = "light";
+      }
+      return newMode;
+    });
+  };
 
   // To handle the navbar when it is scrolled (it becomes blurred)
   useEffect(() => {
@@ -52,7 +66,8 @@ export default function Navbar() {
     const handleClickOutside = (e) => {
       if (
         !hamburgerRef.current.contains(e.target) &&
-        !navMenuRef.current.contains(e.target)
+        !navMenuRef.current.contains(e.target) &&
+        !darkModeRef.current.contains(e.target)
       ) {
         setIsMenuOpen(false);
       }
@@ -80,36 +95,63 @@ export default function Navbar() {
   return (
     <header
       ref={headerRef}
-      className={`${isMenuOpen ? "navbar-blur sm:shadow-lg" : ""} 
-        ${
-          !isMenuOpen && isNavbarFixed ? "navbar-blur shadow-lg" : ""
-        } h-12 sm:h-16 2xl:h-20 flex items-center fixed top-0 left-0 right-0 bg-white z-[9999] transition duration-300`}
+      className={`${isMenuOpen ? "bg-opacity-90 dark:bg-opacity-90 sm:shadow-lg lg:bg-opacity-70 lg:backdrop-blur-md dark:lg:bg-opacity-70 dark:lg:backdrop-blur-md" : ""} ${
+        !isMenuOpen && isNavbarFixed
+          ? "bg-opacity-90 shadow-lg dark:bg-opacity-90 lg:bg-opacity-70 lg:backdrop-blur-md dark:lg:bg-opacity-70 dark:lg:backdrop-blur-md"
+          : ""
+      } fixed left-0 right-0 top-0 z-[9999] flex h-12 items-center bg-white transition-all duration-300 dark:bg-slate-950 sm:h-16 2xl:h-20`}
     >
-      <div className="text-slate-900 h-full w-full px-6 sm:px-12 flex justify-between items-center cursor-pointer">
+      <div className="flex h-full w-full cursor-pointer items-center justify-between px-6 text-slate-900 dark:text-white sm:px-12">
         <Link
-          className="hover:text-slate-800 transition duration-300"
+          className="transition hover:text-slate-700 dark:hover:text-slate-300"
           to="home"
           smooth={true}
           duration={500}
         >
-          <span className="text-xl sm:text-2xl 2xl:text-4xl font-extrabold">
+          <span className="text-xl font-extrabold sm:text-2xl 2xl:text-4xl">
             Hakim Nizami.
           </span>
         </Link>
         <div className="flex items-center">
-          {/* <div className="flex bg-blue-600">
-            <span>light</span>
-            <input type="checkbox"></input>
-            <label htmlFor="dark-toggle" onClick={toggleDark}></label>
-            <span>dark</span>
-          </div> */}
+          <button ref={darkModeRef} onClick={toggleDark}>
+            <div
+              className={`${
+                isDarkMode
+                  ? "bg-white hover:bg-slate-200"
+                  : "bg-slate-900 hover:bg-slate-700"
+              } relative mr-14 aspect-square w-7 overflow-hidden rounded-full transition-all duration-300 sm:mr-8 sm:w-9 2xl:w-11`}
+            >
+              <div
+                className={`absolute h-full w-full p-1 transition duration-300 ${
+                  isDarkMode ? "-translate-x-[200%]" : ""
+                }`}
+              >
+                <img
+                  src={lightImage}
+                  alt=""
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div
+                className={`absolute h-full w-full p-1 transition duration-300 ${
+                  isDarkMode ? "" : "translate-x-[200%]"
+                }`}
+              >
+                <img
+                  src={darkImage}
+                  alt=""
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </button>
           <button
             ref={hamburgerRef}
             id="hamburger"
             name="hamburger"
             className={`${
               isMenuOpen ? "hamburger-active" : ""
-            } block absolute right-6 scale-90 group lg:hidden`}
+            } group absolute right-6 block scale-90 lg:hidden`}
             onClick={toggleMenu}
           >
             <span className="hamburger-line"></span>
@@ -119,20 +161,23 @@ export default function Navbar() {
           <nav
             ref={navMenuRef}
             id="nav-menu"
-            className={`${
-              isMenuOpen ? "navbar-blur lg:navbar-blur-none" : "scale-y-0"
-            } ${
-              isNavbarFixed ? "navbar-blur lg:navbar-blur-none" : ""
-            } bg-white lg:bg-transparent lg:scale-y-100 shadow-lg w-full sm:max-w-64 lg:max-w-full lg:h-full py-5 lg:p-0 absolute lg:static top-full right-0 sm:right-4 left-0 sm:left-auto rounded-b-lg sm:rounded-lg lg:rounded-none lg:shadow-none transition lg:transition-none duration-300 origin-top z-[9999]`}
+            className={`${isMenuOpen ? "" : "scale-y-0"} ${
+              isMenuOpen || isNavbarFixed
+                ? "bg-opacity-90 dark:bg-opacity-90 lg:bg-opacity-70 dark:lg:bg-opacity-70"
+                : ""
+            } absolute left-0 right-0 top-full z-[9999] w-full origin-top rounded-b-lg bg-white py-5 shadow-lg transition duration-300 dark:bg-slate-950 sm:left-auto sm:right-4 sm:max-w-64 sm:rounded-lg lg:static lg:h-full lg:max-w-full lg:scale-y-100 lg:rounded-none lg:bg-transparent lg:p-0 lg:shadow-none lg:transition-none dark:lg:bg-transparent`}
           >
             <ul className="block lg:flex 2xl:text-xl">
               {navItems.map((item, index) => (
-                <li key={index} className="font-medium group">
+                <li
+                  key={index}
+                  className="group font-medium transition max-lg:hover:text-slate-700 dark:max-lg:hover:text-slate-300"
+                >
                   <Link
                     to={item.id}
                     smooth={true}
                     duration={500}
-                    className="mx-8 py-2 flex lg:flex-col justify-center"
+                    className="mx-8 flex justify-center py-2 lg:flex-col"
                     onClick={handleNavClick}
                   >
                     {item.text}
@@ -140,8 +185,8 @@ export default function Navbar() {
                       className={`${
                         item.current
                           ? "max-w-full transition-none"
-                          : "group-hover:max-w-full transition-all duration-500"
-                      } bg-slate-900 max-w-0 h-[2px] 2xl:h-[3px] hidden lg:block`}
+                          : "transition-all duration-500 group-hover:max-w-full"
+                      } hidden h-[2px] max-w-0 bg-slate-900 dark:bg-white lg:block 2xl:h-[3px]`}
                       tabIndex="0"
                     ></span>
                   </Link>
@@ -154,7 +199,3 @@ export default function Navbar() {
     </header>
   );
 }
-
-Navbar.propTypes = {
-  currentId: PropTypes.string.isRequired,
-};
