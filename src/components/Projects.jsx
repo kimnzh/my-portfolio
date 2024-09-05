@@ -107,12 +107,12 @@ export default function Projects() {
                 <div className="group h-full">
                   <div className="bg:bg-white h-full w-full rounded-[12px] bg-slate-900 p-3 text-white transition duration-300 group-hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:group-hover:bg-slate-300 sm:rounded-[24px] sm:p-6">
                     <div className="relative max-w-full overflow-hidden rounded-[4px] border-4 border-solid border-slate-900 transition duration-300 dark:border-slate-950 sm:rounded-[8px]">
-                      <div className="absolute flex h-full w-full items-center justify-center bg-slate-950 font-semibold opacity-0 transition duration-300 group-hover:bg-opacity-50 group-hover:opacity-100">
+                      <div className="absolute flex h-full w-full items-center justify-center bg-slate-950 font-semibold text-white opacity-0 transition duration-300 group-hover:bg-opacity-50 group-hover:opacity-100">
                         {project.notebook !== "" ? (
                           <a
                             href={project.notebook}
                             target="_blank"
-                            className="rounded-xl bg-slate-800 p-4 text-center"
+                            className="rounded-xl bg-slate-800 p-3 text-center text-xs sm:p-4 sm:text-base"
                           >
                             NOTEBOOK
                           </a>
@@ -122,7 +122,7 @@ export default function Projects() {
                           <a
                             href={project.preview}
                             target="_blank"
-                            className="rounded-xl bg-slate-800 p-4 text-center"
+                            className="rounded-xl bg-slate-800 p-2 text-center text-xs sm:p-4 sm:text-base"
                           >
                             PREVIEW
                           </a>
@@ -130,23 +130,23 @@ export default function Projects() {
                           <a
                             href={project.github}
                             target="_blank"
-                            className="rounded-xl bg-slate-800 p-4 text-center"
+                            className="rounded-xl bg-slate-800 p-2 text-center text-xs sm:p-4 sm:text-base"
                           >
-                            GITHUB REPO
+                            GITHUB
                           </a>
                         ) : (
-                          <div className="grid grid-cols-2 gap-3 text-white">
+                          <div className="grid grid-cols-2 gap-3">
                             <a
                               href={project.github}
                               target="_blank"
-                              className="rounded-xl bg-slate-800 p-4 text-center"
+                              className="rounded-xl bg-slate-800 p-2 text-center text-xs sm:p-4 sm:text-base"
                             >
-                              GITHUB REPO
+                              GITHUB
                             </a>
                             <a
                               href={project.preview}
                               target="_blank"
-                              className="rounded-xl bg-slate-800 p-4 text-center"
+                              className="rounded-xl bg-slate-800 p-2 text-center text-xs sm:p-4 sm:text-base"
                             >
                               PREVIEW
                             </a>
